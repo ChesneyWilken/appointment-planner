@@ -12,10 +12,9 @@ export const AppointmentsPage = ({appointments, addAppointments }) => {
   
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    /*
-    Add contact info and clear data  
-    */
+    event.preventDefault(); //prevents page reload
+
+    // Add contact info and clear data  
     addAppointments(prevAppointments => {
       return [{title: title, contact: contact, date: date, time: time}, ...prevAppointments];
     })
@@ -35,7 +34,7 @@ export const AppointmentsPage = ({appointments, addAppointments }) => {
       <hr />
       <section>
         <h2>Appointments</h2>
-        {/* <TileList /> */}
+        <TileList data={appointments}/>
       </section>
     </div>
   );

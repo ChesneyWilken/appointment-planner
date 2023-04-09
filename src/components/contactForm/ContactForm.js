@@ -26,12 +26,12 @@ export const ContactForm = ({
   return (
     <form onSubmit={handleSubmit}> 
       <label htmlFor="name">Name:</label>
-      <input type="text" value={name} onChange={handleName} />
+      <input type="text" value={name} onChange={handleName} placeholder="Contact Name"/>
       <label htmlFor="phone">Phone:</label>
-      <input type="tel" value={phone} onChange={handlePhone} pattern="[0-9]\d+" />
+      <input type="tel" value={phone} onChange={handlePhone} placeholder="Phone Number" pattern="[0-9]\d+" />
       <label htmlFor="email">Email:</label>
-      <input type="emal" value={email} onChange={handleEmail}/>
-      <input type="submit" value={'Add Contact'}/>
+      <input type="emal" value={email} onChange={handleEmail} placeholder="Email"/>
+      <input type="submit" value={'Add Contact'} />
     </form>
   );
 };
