@@ -44,7 +44,7 @@ export const AppointmentForm = ({
       <input type="text" value={title} onChnage={handleTitle} placeholder="Title"/>
 
       <label htmlFor="Contact">Contact:</label>
-      <input type="text" value={contact} onChange={handleContact} placeholder="change me to the component once it's built"/>
+      <ContactPicker contacts={contacts} value={contact} handleContact={handleContact}/>
 
       <label htmlFor="Date">Date:</label>
       <input type="date" value={date} onChange={handleDate}/>

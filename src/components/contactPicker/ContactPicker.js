@@ -1,7 +1,7 @@
 import React from "react";
 
-export const ContactPicker = () => {
+export const ContactPicker = ({contacts, handleContact}) => {
   return (
-    ContactPicker
+    <input type="select" onChange={handleContact}/>
   );
 };
