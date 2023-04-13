@@ -11,11 +11,12 @@ export const AppointmentForm = ({
   setDate,
   time,
   setTime,
-  handleSubmit
+  handleSubmit,
 }) => {
+
   const getTodayString = () => {
     const [month, day, year] = new Date()
-      .toLocaleDateString("en-GB")
+      .toLocaleDateString("en-US")
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
@@ -36,21 +37,50 @@ export const AppointmentForm = ({
     setTime(event.target.value);
   }
 
-
+  /*The event handlers below can be placed as inline functions 
+  e.g onChange={(event) => setTitle(event.target.value)}
+  
+  I opted not to because I think it makes it more obvious how functions are passed to elements */
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="Title">Title:</label>
-      <input type="text" value={title} onChnage={handleTitle} placeholder="Title"/>
+      <label>
+        Title:
+        <input 
+          type="text"
+          value={title}
+          onChange={handleTitle}
+          placeholder="Title"
+          required/> 
+      </label>
+      
 
-      <label htmlFor="Contact">Contact:</label>
-      <ContactPicker contacts={contacts} value={contact} handleContact={handleContact}/>
+      <label>
+        Contact:
+        <ContactPicker
+          contacts={contacts}
+          value={contact}
+          handleContact={handleContact}/>
+      </label>
 
-      <label htmlFor="Date">Date:</label>
-      <input type="date" value={date} onChange={handleDate}/>
+      <label>
+        Date:
+        <input
+          type="date"
+          value={date}
+          onChange={handleDate}
+          required/>
+      </label>
 
-      <label htmlFor="Time">Time:</label>
-      <input type="time" value={time} onChange={handleTime} min={getTodayString}/>
+      <label htmlFor="time">
+        Time:
+        <input
+          type="time"
+          value={time}
+          onChange={handleTime}
+          min={getTodayString()}
+          required/>
+      </label>
 
       <input type="submit" value={'Add Appointment'} />
     </form>

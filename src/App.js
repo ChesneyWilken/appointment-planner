@@ -7,18 +7,16 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   // State variables for contacts and appointments 
  
-  const [contacts, addContacts] = useState([{name: 'test', number: 7756822457,  email:"test@fake.com"}]);
-  const [appointments, addAppointments] = useState([{title: 'My Appointment', contact:'test contact', date: '12/03/23', time:'14:00'}]);
+  const [contacts, addContact] = useState([{name: 'test', number: 7756822457,  email:"test@fake.com"}]);
+  
+  const [appointments, addAppointment] = useState([{title: 'My Appointment', contact:'test contact', date: '12/03/23', time:'14:00'}]);
+
 
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
   };
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
 
   return (
     <>
@@ -36,11 +34,11 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            <ContactsPage contacts={contacts} addContacts={addContacts}/>
+            <ContactsPage contacts={contacts} addContact={addContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} addAppointmets={addAppointments} contacts={contacts}/>
+            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} contacts={contacts}/>
           </Route>
         </Switch>
       </main>

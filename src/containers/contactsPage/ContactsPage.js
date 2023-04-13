@@ -3,7 +3,7 @@ import { ContactForm }  from "../../../src/components/contactForm/ContactForm";
 import { TileList } from "../../../src/components/tileList/TileList";
 
 
-export const ContactsPage = ({contacts, addContacts}) => {
+export const ContactsPage = ({contacts, addContact}) => {
   // State variables for contact info and duplicate check
 
   const [name, setName] = useState('');
@@ -17,7 +17,7 @@ export const ContactsPage = ({contacts, addContacts}) => {
 
     if(isDuplicate === false){
 
-      /*you need to return this as an object within an array or else you will get every charater in the array returned on a new line.
+      /*you need to return this as an object within an array or else you will get every character in the array returned on a new line.
       E.g. Form inputs = name: joe, phone: 123, email: test@me
 
       this will be displayed in the contacts section
@@ -32,7 +32,7 @@ export const ContactsPage = ({contacts, addContacts}) => {
       addContacts([name, phone, email, ...contacts])
       */
 
-      addContacts(prevContacts => {
+      addContact(prevContacts => {
         return [{name: name, phone: phone, email: email}, ...prevContacts]
       });
 
@@ -45,7 +45,7 @@ export const ContactsPage = ({contacts, addContacts}) => {
 
   // Using hooks, check for contact name in the contacts array variable in props
   useEffect(() =>{
-      //.some() is used because its more efficient than find. To improve this functionality 2 or more pieces of contact data should be checked
+      //.some() is used because its more efficient than .find(). To improve this functionality 2 or more pieces of contact data should be checked
     const checkContacts = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
 
     if (checkContacts){
@@ -63,9 +63,12 @@ export const ContactsPage = ({contacts, addContacts}) => {
       <section>
         <h2>Add Contact</h2>
         <ContactForm 
-        name={name} setName={setName}
-        phone={phone} setPhone={setPhone}
-        email={email} setEmail={setEmail}
+        name={name}
+        setName={setName}
+        phone={phone} 
+        setPhone={setPhone}
+        email={email}
+        setEmail={setEmail}
         handleSubmit={handleSubmit}
         />
       </section>
