@@ -7,9 +7,9 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   // State variables for contacts and appointments 
  
-  const [contacts, addContact] = useState([{name: 'test', number: 7756822457,  email:"test@fake.com"}]);
+  const [contacts, addContact] = useState([{name: 'Joe Blogs', number: 55522233345,  email:"test@fake.com"}]);
   
-  const [appointments, addAppointment] = useState([{title: 'My Appointment', contact:'test contact', date: '12/03/23', time:'14:00'}]);
+  const [appointments, addAppointment] = useState([{title: 'My Appointment', contact:'Joe Blogs', date: '12/06/23', time:'14:00'}]);
 
 
   const ROUTES = {

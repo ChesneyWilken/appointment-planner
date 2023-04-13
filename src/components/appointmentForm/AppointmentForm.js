@@ -68,6 +68,7 @@ export const AppointmentForm = ({
         <input
           type="date"
           value={date}
+          min={getTodayString()}
           onChange={handleDate}
           required/>
       </label>
@@ -78,7 +79,6 @@ export const AppointmentForm = ({
           type="time"
           value={time}
           onChange={handleTime}
-          min={getTodayString()}
           required/>
       </label>
 
