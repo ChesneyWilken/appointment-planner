@@ -4,7 +4,7 @@ This is a simple appointment planner built using React. It was completed as part
 
 ## Purpose
 
-The comments in this project serve two main purposes. The first is to serve as a detailed reminder to me when I need a refresher on React and how props are passed. The second is to provide a detailed explanation of what each part of the code does, why I've implemented it that way, and some of the big mistakes I made while writing the code.
+The comments in this project serve two main purposes. The first is to serve as a detailed reminder to me when I need a refresher on React and how props are passed. The second is to provide a detailed explanation of what each part of the code does, why I've implemented it that way, and some of the mistakes I made while writing the code.
 
 ## Usage
 
