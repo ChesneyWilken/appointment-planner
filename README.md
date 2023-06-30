@@ -1,6 +1,6 @@
 # Appointment Planner
 
-This is a simple appointment planner built using React. It was completed as part of the CodeCademy Full-Stack developer course.
+This is a simple appointment planner built using React. It was completed as part of the CodeCademy Full-Stack developer course. You can find the deployed version of the app [here](https://react-appointmet-planner.netlify.app)
 
 ## Purpose
 
